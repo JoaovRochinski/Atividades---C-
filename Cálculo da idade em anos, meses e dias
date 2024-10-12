@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+void calculaIdade(int dia, int mes, int ano, int diaAtual, int mesAtual, int anoAtual) {
+    int diasVividos = (anoAtual - ano) * 365 + (mesAtual - mes) * 30 + (diaAtual - dia);
+    int anos = diasVividos / 365;
+    diasVividos %= 365;
+    int meses = diasVividos / 30;
+    diasVividos %= 30;
+    int dias = diasVividos;
+    cout << "Você já viveu: " << anos << " anos, " << meses << " meses e " << dias << " dias." << endl;
+}
+
+int main() {
+    int dia, mes, ano;
+    int diaAtual = 8, mesAtual = 8, anoAtual = 2024;
+    cout << "Digite o dia, mês e ano do seu nascimento: ";
+    cin >> dia >> mes >> ano;
+    calculaIdade(dia, mes, ano, diaAtual, mesAtual, anoAtual);
+    return 0;
+}

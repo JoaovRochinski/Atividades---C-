@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+
+const int TAMANHO = 10;
+
+void lerVetor(int vetor[], int tamanho) {
+    cout << "Digite " << tamanho << " números inteiros:\n";
+    for (int i = 0; i < tamanho; ++i) {
+        cin >> vetor[i];
+    }
+}
+
+bool jaFoiAdicionado(int vetor[], int tamanho, int valor) {
+    for (int i = 0; i < tamanho; ++i) {
+        if (vetor[i] == valor) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int main() {
+    int vetor1[TAMANHO];
+    int vetor2[TAMANHO];
+    int uniao[2 * TAMANHO];  // O vetor de união pode ter até 20 elementos
+    int tamanhoUniao = 0;
+
+    // Leitura dos vetores
+    cout << "Digite os elementos do primeiro vetor:\n";
+    lerVetor(vetor1, TAMANHO);
+    cout << "Digite os elementos do segundo vetor:\n";
+    lerVetor(vetor2, TAMANHO);
+
+    // Adicionar elementos do primeiro vetor ao vetor de união
+    for (int i = 0; i < TAMANHO; ++i) {
+        if (!jaFoiAdicionado(uniao, tamanhoUniao, vetor1[i])) {
+            uniao[tamanhoUniao] = vetor1[i];
+            ++tamanhoUniao;
+        }
+    }
+
+    // Adicionar elementos do segundo vetor ao vetor de união
+    for (int i = 0; i < TAMANHO; ++i) {
+        if (!jaFoiAdicionado(uniao, tamanhoUniao, vetor2[i])) {
+            uniao[tamanhoUniao] = vetor2[i];
+            ++tamanhoUniao;
+        }
+    }
+
+    // Exibição do vetor de união
+    cout << "União dos dois vetores (sem repetição):\n";
+    if (tamanhoUniao == 0) {
+        cout << "Nenhum valor encontrado.\n";

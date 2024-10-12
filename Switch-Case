@@ -1,0 +1,68 @@
+/******************************************************************************
+
+faça um programa que apresente para o usuário o seguinte menu com as opções e seus repectivos valores:
+*******************************************************************************/
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int conta_total, entrada, prato_principal, acompanhamento, sobremesa;
+    
+    conta_total = 0;
+    
+   cout << "***ENTRADA***";
+   cout << /*1*/ "\n(1) Fritas (R$ 20,00)" << /*2*/ "\n(2) Salada (R$ 15,00)" 
+   << /*3*/ "\n(3) Frios (R$ 25,00)" << /*4*/ "\n(4) Nenhum (R$ 0,00)\n";
+   cin >> entrada;
+   
+   switch(entrada) {
+       case 1: {conta_total += 20;break;}
+       case 2: {conta_total += 15;break;}
+       case 3: {conta_total +=25;break;}
+       case 4: {conta_total += 0;break;}
+   }
+   
+   cout << "***Prato principal***";
+   cout << /*1*/ "\n(1) Macarronada (R$ 30,00)" << /*2*/ "\n(2) Risoto (R$ 30,00)" 
+   << /*3*/ "\n(3) Frutos do mar (R$ 50,00)" << /*4*/ "\n(4) Carnes (R$ 50,00)" 
+   << /*5*/ "\n(5) Nenhum (R$ 0,00)\n";
+   cin >> prato_principal;
+   
+   switch(prato_principal) {
+       case 1: {conta_total += 30;break;}
+       case 2: {conta_total += 30;break;}
+       case 3: {conta_total += 50;break;}
+       case 4: {conta_total += 50;break;}
+       case 5: {conta_total += 0;break;}
+   }
+   
+   cout << "***Acompanhamento***";
+   cout << /*1*/ "\n(1) Arroz e feijão (R$ 15,00)" << /*2*/ "\n(2) Batatas (R$ 15,00)" 
+   << /*3*/ "\n(3) Pães (R$ 10,00)" << /*4*/ "\n(4)Nenhum (R$ 0,00)\n";
+   cin >> acompanhamento;
+   
+   switch(acompanhamento) {
+       case 1: {conta_total += 15;break;}
+       case 2: {conta_total += 15;break;}
+       case 3: {conta_total += 10;break;}
+       case 4: {conta_total += 0;break;}
+   }
+   
+   cout << "***Sobremesa***";
+   cout << /*1*/ "\n(1) Sorvete (R$ 12,00)" << /*2*/ "\n(2) Bolo (R$ 10,00)"  
+   << /*3*/ "\n(3) Nenhum (R$ 0,00)\n";
+   cin >> sobremesa;
+   
+   switch(sobremesa) {
+       case 1: {conta_total += =12;break;}
+       case 2: {conta_total += =10;break;}
+       case 3: {conta_total += =0;break;}
+   }
+   
+   cout << conta_total;
+   
+    return 0;
+}
+
